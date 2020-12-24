@@ -1,0 +1,562 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap";
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 10px;
+	font-family: 'Inter', sans-serif;
+	scroll-behavior: smooth;
+}
+a {
+	text-decoration: none;
+}
+.container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+h1 {
+	font-weight: 800;
+}
+h2 {
+	font-weight: 600;
+}
+h3 {
+	font-weight: 500;
+}
+p {
+	color: black;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300;
+	letter-spacing: .05rem;
+}
+.section-title {
+	font-size: 4rem;
+	font-weight: 600;
+	color: black;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+}
+.section-title span {
+	color: gold;
+}
+h1.section-title {
+	font-size: 6rem;
+	font-weight: 600;
+}
+
+/* Header section */
+#header {
+	position: fixed;
+	z-index: 1000;
+	width: 100vw;
+	height: auto;
+	text-align: left;
+}
+#header .header {
+	min-height: 8vh;
+	background-color: rgba(25, 25, 25, 0.25);
+	transition: .3s ease background-color;
+}
+#header .AllDayLogo {
+	max-height: 50px;
+	width: 50px;
+	transition: .5s;
+}
+#header .AllDayLogo:hover {
+	transform: rotate(25deg) scale(1.1);
+}
+#header .nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+}
+#header .nav-list ul {
+	list-style: none;
+	position: absolute;
+	background-color: rgb(30, 30, 30);
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: hidden;
+	transition: .5s ease left;
+}
+#header .nav-list ul.active {
+	left: 0%;
+}
+#header .nav-list ul a {
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: .2rem;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	padding: 20px;
+	display: block;
+}
+#header .nav-list ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+#header .nav-list ul li:hover a {
+	color: gold;
+}
+
+/* End Header section */
+
+/* Home Section */
+#home {
+	background-image: url(./img/KanyeBG2.png);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;
+}
+#home::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.75;
+	z-index: -1;
+}
+#home .home {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 360px;
+	justify-content: flex-start;
+}
+#home h1 {
+	font-size: 7rem;
+	color: gold;
+}
+#home h3 {
+	display: block;
+	padding-left: 125px;
+	font-size: 20px;
+	position: relative;
+	color: transparent;
+	animation: text_reveal 3s ease forwards;
+	animation-delay: .5s;
+}
+
+
+/* End Home Section */
+
+/* Yeezy Section */
+#services .services {
+	flex-direction: column;
+	text-align: center;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 25px;
+	margin-bottom: 25px;
+}
+#services .service-top {
+	max-width: 720px;
+}
+#services .service-top p {
+	padding-top: 25px;
+}
+#services .service-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 25px;
+}
+#services .service-item {
+	position: relative;
+	transition: 0.5s;
+}
+#services .service-item:hover {
+	transform: scale(1.03);
+}
+#services .service-ol {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0);
+	transition: 0.5s;
+}
+#services .service-ol:hover {
+	background: rgba(0, 0, 0, .5);
+}
+#services .service-txt {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 3rem;
+	font-weight: 100;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: .5s;
+}
+#services .service-txt:hover {
+	opacity: 100%;
+}
+#services .service-item p {
+	color: white;
+	text-align: left;
+}
+#services .service-img {
+	display: block;
+}
+/* End Yeezy Section */
+
+/* Albums section */
+#projects .projects {
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+#projects .projects-header h1 {
+	margin-bottom: 50px;
+}
+#projects .all-projects {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+#projects .project-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 80%;
+	margin: 20px auto;
+	overflow: hidden;
+	border-radius: 10px;
+}
+#projects .project-info {
+	padding: 30px;
+	flex-basis: 50%;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,37,174,1) 0%, rgba(241,147,55,1) 53.4%, rgba(250,237,56,1) 99.5% );
+	background-size: 200%;
+	border-top-left-radius: 75px;
+	border-bottom-left-radius: 10px;
+	transition: 0.5s;
+	color: white;
+}
+#projects .project-info2 {
+	padding: 30px;
+	flex-basis: 50%;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,37,174,1) 0%, rgba(241,147,55,1) 53.4%, rgba(250,237,56,1) 99.5% );
+	background-size: 200%;
+	border-bottom-right-radius: 75px;
+	border-top-right-radius: 10px;
+	transition: 0.5s;
+	color: white;
+}
+#projects .project-info:hover {
+	background-position: right;
+}
+#projects .project-info h1 {
+	font-size: 4rem;
+	font-weight: 500;
+	color: white;
+	padding-bottom: 10px;
+}
+#projects .project-info h2 {
+	font-size: 2rem;
+	font-weight: 500;
+	padding-bottom: 25px;
+}
+#projects .project-info p {
+	font-size: 16px;
+	color: white;
+	padding-top: 25px;
+}
+#projects .project-info2 h1 {
+	font-size: 4rem;
+	font-weight: 500;
+	color: white;
+	padding-bottom: 10px;
+}
+#projects .project-info2 h2 {
+	font-size: 2rem;
+	font-weight: 500;
+	padding-bottom: 25px;
+}
+#projects .project-info2 p {
+	font-size: 16px;
+	color: white;
+	padding-top: 25px;
+}
+#projects .project-info2:hover {
+	background-position: right;
+}
+#projects .project-img {
+	flex-basis: 50%;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	border-bottom-right-radius: 75px;
+	border-top-right-radius: 10px;
+}
+#projects .project-img {
+	flex-basis: 50%;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	border-bottom-right-radius: 75px;
+}
+#projects .project-img img {
+	transition: .5s ease transform;
+}
+#projects .project-img:hover img {
+	transform: scale(1.1);
+}
+#projects .project-img2 {
+	flex-basis: 50%;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	border-top-left-radius: 75px;
+	border-bottom-left-radius: 10px;
+}
+#projects .project-img2 img {
+	transition: .5s ease transform;
+}
+#projects .project-img2:hover img {
+	transform: scale(1.1);
+}
+#projects .project-imgol {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .1);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: 0.5s;
+}
+#projects .project-imgol:hover {
+	background: rgba(0, 0, 0, 0);
+}
+#projects .project-item {
+	flex-direction: row;
+}
+#projects .project-item:nth-child(even) {
+	flex-direction: row-reverse;
+}
+#projects .project-item {
+	height: 400px;
+	margin: 0;
+	width: 100%;
+	border-radius: 0;
+}
+#projects .all-projects .project-info {
+	height: 100%;
+}
+#projects .all-projects .project-img {
+	height: 100%;
+}
+#projects .all-projects .project-info2 {
+	height: 100%;
+}
+#projects .all-projects .project-img2 {
+	height: 100%;
+}
+/* End Projects section */
+
+/* About Section */
+#about .about {
+	flex-direction: column-reverse;
+	text-align: center;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 100px 20px;
+}
+#about .col-left {
+	width: 250px;
+	height: 360px;
+}
+#about .col-right {
+	width: 100%;
+}
+#about .col-right h2 {
+	font-size: 1.8rem;
+	font-weight: 500;
+	letter-spacing: .2rem;
+	margin-bottom: 10px;
+}
+#about h2 {
+	padding-bottom: 12px;
+}
+#about .about-img {
+	transition: 0.5s ease transform;
+}
+#about .about-img:hover {
+	transform: scale(1.03);
+}
+#about .about {
+	flex-direction: row;
+}
+#about .col-left {
+	width: 600px;
+	height: 400px;
+	padding-left: 60px;
+}
+
+#about .col-right {
+	text-align: left;
+	padding: 30px;
+}
+#about .col-right h1 {
+	text-align: left;
+}
+/* End About Section */
+
+/* Media Section */
+
+/*End Media Section */
+
+/* Footer */
+#footer {
+	background-image: linear-gradient( 112.1deg,  rgba(32,38,57,1) 11.4%, rgba(63,76,119,1) 70.2% );
+	background-size: 200%;
+}
+#footer .footer {
+	min-height: 200px;
+	flex-direction: column;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+#footer h1 {
+	padding-top: 15px;
+	color: white;
+	font-size: 3rem;
+}
+#footer h3 {
+	color: white;
+	font-weight: 400;
+	font-size: 1.5rem;
+	font-style: italic;
+	padding-top: 10px;
+}
+#footer .social-icon {
+	display: flex;
+	padding-top: 25px;
+	margin-bottom: 10px;
+}
+#footer .social-item {
+	display: flex;
+	align-items:flex-start;
+	max-height: 40px;
+	width: 40px;
+	margin-top: 5px; 
+}
+#footer .social-item {
+	transition: .5s;
+}
+#footer .social-item:hover {
+	transform: scale(1.1);
+}
+#footer .social-item1 {
+	display: flex;
+	align-items:flex-start;
+	max-height: 50px;
+	width: 50px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+#footer .social-item1 {
+	transition: .5s;
+}
+#footer .social-item1:hover {
+	transform: scale(1.1) rotate(25deg);
+}
+#footer p {
+	color: white;
+	font-size: 1.3rem;
+}
+/* End Footer */
+
+/* Keyframes */
+@keyframes text_reveal {
+	100% {
+		color: white;
+	}
+}
+
+/* End Keyframes */
+
+/* For Desktop */
+@media only screen and (min-width: 1200px) {
+	/* header */
+	#header .hamburger {
+		display: none;
+	}
+	#header .nav-list ul {
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: transparent;
+	}
+	#header .nav-list ul li {
+		display: inline-block;
+	}
+	#header .nav-list ul li a {
+		font-size: 1.8rem;
+	}
+	#header .nav-list ul a:after {
+		display: none;
+	}
+	/* End header */
+
+	#services .service-bottom .service-item {
+		flex-basis: 22%;
+		margin: 1.5%;
+	}
+}
+/* End  For Desktop */
